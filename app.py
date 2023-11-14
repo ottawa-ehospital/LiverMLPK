@@ -15,7 +15,6 @@ def home():
 def predict():
     try:
         data = request.get_json()
-        #print(data)
         values = [data["Age"], data["Total_Bilirubin"], data["Direct_Bilirubin"], data["Alkaline_Phosphotase"], data["Alamine_Aminotransferase"], data["Aspartate_Aminotransferase"], data["Total_Protiens"], data["Albumin"], data["Albumin_and_Globulin_Ratio"], data["Gender_Female"], data["Gender_Male"]]
         print(values)
         prediction = model.predict([values])

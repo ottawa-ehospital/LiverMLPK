@@ -61,6 +61,7 @@ liver_df = pd.concat([liver_df,pd.get_dummies(liver_df['Gender'], prefix = 'Gend
 liver_df.head()
 
 liver_df.describe()
+liver_df = liver_df.fillna(0)
 
 liver_df[liver_df['Albumin_and_Globulin_Ratio'].isnull()]
 
@@ -107,4 +108,4 @@ sns.heatmap(confusion_matrix(y_test,rf_predicted),annot=True,fmt="d")
 
 import pickle
 # save an existing model to file
-pickle.dump(rf_predicted, open("liver_prediction_model_1.0.pkl", "wb"))
+pickle.dump(random_forest, open("liver_prediction_model_1.0.pkl", "wb"))
